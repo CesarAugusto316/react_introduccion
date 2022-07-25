@@ -1,4 +1,6 @@
 import { FC, useEffect, useState } from 'react';
+import '@animxyz/core';
+import { XyzTransitionGroup } from '@animxyz/react';
 import axios from 'axios';
 import { Card } from '../card/Card';
 import './cardsList.css';
@@ -29,11 +31,15 @@ const CardsList: FC = () => {
   }, []);
 
   return (
-    <div className="card-container">
+    <XyzTransitionGroup appearVisible xyz="fade big stagger" className="card-container">
       {courses.map((course) => {
-        return <Card key={course.id} {...course} />;
+        return (
+          <div className="wrapper" key={course.id}>
+            <Card {...course} />
+          </div>
+        );
       })}
-    </div>
+    </XyzTransitionGroup>
   );
 };
 

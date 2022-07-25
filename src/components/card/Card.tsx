@@ -32,7 +32,6 @@ export const Card: FC<Course> = ({
             <p>{users}</p>
           </div>
         </div>
-
         <Button />
       </div>
     </div>
