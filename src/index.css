@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  --font-family: "Poppins", sans-serif;
+  --primary: rgb(102, 204, 138);
+  --primary-focus: rgb(61, 184, 104);
+  --primary-content: rgb(40, 71, 56);
+  --secondary: rgb(55, 124, 251);
+  --secondary-focus: rgb(5, 87, 240);
+  --accent: rgb(234, 82, 52);
+  --base-100: rgb(253, 253, 253);
+  --base-150: rgb(247, 247, 247);
+  --base-200: rgb(230, 230, 230);
+  --base-300: rgb(207, 207, 207);
+  --base-400: rgb(184, 185, 190);
+  --base-content: rgb(63, 65, 85);
+  --base-drop-shadow: rgba(46, 55, 74, 0.1);
+  --primary-drop-shadow: rgba(3, 69, 190, 0.6);
+}
+
+[data-theme="dark"] {
+  --base-100: rgb(42, 48, 60);
+  --base-150: rgb(36, 41, 51);
+  --base-200: rgb(31, 36, 45);
+  --base-content: rgb(166, 173, 186);
+}
+
+[data-theme="light"] {
+  --base-100: rgb(253, 253, 253);
+  --base-150: rgb(247, 247, 247);
+  --base-200: rgb(230, 230, 230);
+  --base-content: rgb(63, 66, 98);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+.app {
+  font-family: var(--font-family);
+  color: var(--base-content);
+  font-size: 1.6rem;
+  background-color: var(--base-150);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  appearance: none;
+  width: 10px;
+  background-color: var(--base-200);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--base-400);
+  display: block;
+  min-height: 40px;
+  border-radius: 10rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-drop-shadow);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+.section {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 6rem;
+}
+
+/*─────────────────────────────────────────
+* Media Queries
+*─────────────────────────────────────────*/
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 58%;
+  }
+
+  .section {
+    padding: 3rem 2rem;
+  }
+}

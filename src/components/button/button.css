@@ -1,0 +1,18 @@
+.button {
+  cursor: pointer;
+  display: block;
+  width: 100;
+  background-color: var(--secondary-focus);
+  border-radius: 25rem;
+  text-transform: uppercase;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--base-150);
+  box-shadow: 1px 1px 12px 4px var(--base-drop-shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
