@@ -1,9 +1,5 @@
-import {
-  FC, Suspense, lazy,
-} from 'react';
-import {
-  Navbar, Spinner,
-} from './components';
+import { FC, Suspense, lazy } from 'react';
+import { Navbar, Spinner } from './components';
 
 
 const CardsList = lazy(() => import('./components/cardsList/CardsList'));

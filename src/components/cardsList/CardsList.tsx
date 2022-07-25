@@ -31,7 +31,11 @@ const CardsList: FC = () => {
   }, []);
 
   return (
-    <XyzTransitionGroup appearVisible xyz="fade big stagger" className="card-container">
+    <XyzTransitionGroup
+      appearVisible
+      xyz="fade big stagger ease-in-out-back duration-8"
+      className="card-container"
+    >
       {courses.map((course) => {
         return (
           <div className="wrapper" key={course.id}>
