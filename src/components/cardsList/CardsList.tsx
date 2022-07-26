@@ -4,6 +4,7 @@ import { XyzTransitionGroup } from '@animxyz/react';
 import axios from 'axios';
 import { Card } from '../card/Card';
 import './cardsList.css';
+import { Spinner } from '../spinner/Spinner';
 
 
 const apiUrl = import.meta.env.VITE_LARNU_API;
@@ -17,12 +18,13 @@ export interface Course {
   id: number
 }
 
-const CardsList: FC = () => {
+export const CardsList: FC = () => {
   const [courses, setCourses] = useState<Array<Course>>([]);
 
   useEffect(() => {
     axios.get(apiUrl)
       .then(({ data }) => {
+        console.log(data);
         setCourses(data.communityCategories);
       })
       .catch((error) => {
@@ -30,10 +32,14 @@ const CardsList: FC = () => {
       });
   }, []);
 
+  if (courses?.length === 0) {
+    return <Spinner />;
+  }
   return (
     <XyzTransitionGroup
+      appear
       appearVisible
-      xyz="fade big stagger ease-in-out-back duration-8"
+      xyz="fade big up stagger-2 ease-in-out-back"
       className="card-container"
     >
       {courses.map((course) => {
@@ -46,5 +52,3 @@ const CardsList: FC = () => {
     </XyzTransitionGroup>
   );
 };
-
-export default CardsList;
